@@ -6,6 +6,7 @@ import Navigator from './component/Navigator/Navigator';
 import TriviaGame from './component/TriviaGame/TriviaGame';
 import ControlledInput from './component/ControlledInput/ControlledInput';
 import Api from './component/Api/Api';
+import Redux  from './component/Redux/Redux';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <TriviaGame /> <br />
         <ControlledInput /><br />
         <Api starshipId="9" /><br />
+        <Redux />
       </div>
     );
   }

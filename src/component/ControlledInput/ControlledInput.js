@@ -11,8 +11,8 @@ class ControlledInput extends Component {
     }
     render() {
         var array = ["apple", "banana", "carrot", "donuts"]
-        var options = array.map((item) =>
-            <option value={item}>{item}</option>
+        var options = array.map((item, index) =>
+            <option key={index} value={item}>{item}</option>
         )
 
         return (
@@ -33,7 +33,7 @@ class ControlledInput extends Component {
                 </div>
                 <div className="form-group">
                     <select name="selectName" className="form-control" value={this.state.selectName} onChange={this.handleChange}>
-                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="" disabled hidden>Choose here</option>
                         {options}
                     </select>
                     <div>Your selected option : {this.state.selectName}</div>

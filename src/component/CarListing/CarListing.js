@@ -29,7 +29,7 @@ function TableComponent(props) {
         <div>
             <h3>{props.title}</h3>
             {props.items.map((item, index) => (
-                <TableBodyComponent item={item} />
+                <TableBodyComponent key={index} item={item} />
             ))}
         </div>
     )

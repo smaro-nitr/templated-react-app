@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
 import reducer from './reducer';
 
-var defaultstate = {
+var intialstate = {
     redux: "", 
     apifetch:"Which action hero will save us in future ? .. Find out in Redux tab"
 }
-const store = createStore(reducer, defaultstate);
+const store = createStore(reducer, intialstate);
 
 export default store;

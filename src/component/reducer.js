@@ -1,6 +1,10 @@
-const reducer = function(state, payload){
-    if(payload.type === "ATTACK"){
-        return payload.state;
+const reducer = function(state, action){
+    switch (action.type) {
+        case "ATTACK" :
+            state = action.payload;
+            break;
+        default :
+            break;
     }
     return state;
 };

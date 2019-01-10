@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import store from '../store';
 
 class Welcome extends Component {
     constructor(props) {
@@ -19,6 +20,9 @@ class Welcome extends Component {
                     Hello ! This is {this.props.name} from {this.state.Location} : Click Here &nbsp;
                     <button onClick={this.clickHandler}>{this.state.Count}</button>
                 </h3>
+
+                
+                {store.getState().apifetch}
             </div>
         )
     }

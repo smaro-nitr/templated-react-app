@@ -6,7 +6,15 @@ class ApiFetch extends Component {
         this.state = { result: { MGLT: "loading .." } }
     }
 
-    componentWillMount() {
+    render() {
+        return (
+            <div className="card card-body">
+                Fetched from API : {this.state.result.MGLT}
+            </div>
+        )
+    }
+
+    componentDidMount() {
         fetch("https://swapi.co/api/starships/" + this.props.starshipId)
             .then(response => response.json())
             .then(data => {
@@ -19,14 +27,6 @@ class ApiFetch extends Component {
             .catch(error => {
                 this.setState({ result: { MGLT: "error" } })
             })
-    }
-
-    render() {
-        return (
-            <div className="card card-body">
-                {this.state.result.MGLT}
-            </div>
-        )
     }
 }
 

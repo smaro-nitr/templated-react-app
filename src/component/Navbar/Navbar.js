@@ -29,7 +29,7 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <Link to='/' className="navbar-brand">React</Link>
+                    <Link to='/' className="navbar-brand" onClick={() => { this.clickHandler(null, null) }}>React</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

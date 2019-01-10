@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
+import store from '../store';
 
 class Redux extends Component {
     render() {
-        const reducer = function(state, action){
-            if(action.type === "ATTACK"){
-                return action.payload;
+        store.subscribe(() => {});
+        store.dispatch({
+            type: "ATTACK", 
+            state: {
+                redux: "Iron man will save us .. Verify it in Welcome tab", 
+                apifetch:"Iron man will save us for sure"
             }
-            return state;
-        };
-        
-        const store = createStore(reducer, "Initial Action Hero");
-
-        store.subscribe(() => {
-            console.log("store is now", store.getState());
-        })
-        
-        store.dispatch({type: "NOATTACK", payload: ""})
-        store.dispatch({type: "ATTACK", payload: "Iron Man"})
+        });
 
         return (
             <div className="card card-body">
-                Redux
+               {store.getState().redux}
             </div>
         );
     }

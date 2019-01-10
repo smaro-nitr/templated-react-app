@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Api extends Component {
+class ApiFetch extends Component {
     constructor(props) {
         super(props)
         this.state = { result: { MGLT: "loading .." } }
@@ -30,4 +30,4 @@ class Api extends Component {
     }
 }
 
-export default Api;
+export default ApiFetch;

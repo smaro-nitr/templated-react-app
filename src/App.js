@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
-import CarListing from './component/CarListing/CarListing'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+
+import Navbar from './component/Navbar/Navbar';
 import Welcome from './component/Welcome/Welcome';
-import Navigator from './component/Navigator/Navigator';
-import TriviaGame from './component/TriviaGame/TriviaGame';
+import ContentUpdate from './component/ContentUpdate/ContentUpdate';
+import ApiFetch from './component/ApiFetch/ApiFetch';
+import CarListing from './component/CarListing/CarListing'
 import ControlledInput from './component/ControlledInput/ControlledInput';
-import Api from './component/Api/Api';
-import Redux  from './component/Redux/Redux';
+import Redux from './component/Redux/Redux';
+import TriviaGame from './component/TriviaGame/TriviaGame';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      navigationComponent: ['', 'ContentUpdate', 'ApiFetch', 'CarListing', 'ControlledInput', 'Redux', 'TriviaGame']
+    };
+  }
+
   render() {
     return (
-      <div> <br />
-        <CarListing /> <br />
-        <Welcome name="Subhendu" /> <br />
-        <Navigator /> <br />
-        <TriviaGame /> <br />
-        <ControlledInput /><br />
-        <Api starshipId="9" /><br />
-        <Redux />
-      </div>
+      <Router>
+        <div>
+          <Navbar navigationComponent={this.state.navigationComponent}/> <br />
+          <Route exact path={'/' + this.state.navigationComponent[0]} render={() => <Welcome name="Subhendu" />} />
+          <Route exact path={'/' + this.state.navigationComponent[1]} component={ContentUpdate} />
+          <Route exact path={'/' + this.state.navigationComponent[2]} render={() => <ApiFetch starshipId="9" />} />
+          <Route exact path={'/' + this.state.navigationComponent[3]} component={CarListing} />
+          <Route exact path={'/' + this.state.navigationComponent[4]} component={ControlledInput} />
+          <Route exact path={'/' + this.state.navigationComponent[5]} component={Redux} />
+          <Route exact path={'/' + this.state.navigationComponent[6]} component={TriviaGame} />
+          <br />
+        </div>
+      </Router>
     );
   }
 }

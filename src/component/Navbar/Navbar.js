@@ -41,6 +41,8 @@ class Navbar extends Component {
                             <Tab id="3" name={this.props.navigationComponent[3]} active={this.state.activeArray[3]} clickHandler={this.clickHandler} />
                             <Tab id="4" name={this.props.navigationComponent[4]} active={this.state.activeArray[4]} clickHandler={this.clickHandler} />
                             <Tab id="5" name={this.props.navigationComponent[5]} active={this.state.activeArray[5]} clickHandler={this.clickHandler} />
+                            <Tab id="6" name={this.props.navigationComponent[6]} active={this.state.activeArray[6]} clickHandler={this.clickHandler} />
+                            <Tab id="7" name={this.props.navigationComponent[7]} active={this.state.activeArray[7]} clickHandler={this.clickHandler} />
                         </div>
                     </div>
                 </nav>

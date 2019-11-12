@@ -29,7 +29,7 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <Link to='/' className="navbar-brand" onClick={() => { this.clickHandler(null, null) }}>React</Link>
+                    <Link to='/' className="navbar-brand" onClick={() => { this.clickHandler(null, null) }}>Subhendu</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -43,6 +43,7 @@ class Navbar extends Component {
                             <Tab id="5" name={this.props.navigationComponent[5]} active={this.state.activeArray[5]} clickHandler={this.clickHandler} />
                             <Tab id="6" name={this.props.navigationComponent[6]} active={this.state.activeArray[6]} clickHandler={this.clickHandler} />
                             <Tab id="7" name={this.props.navigationComponent[7]} active={this.state.activeArray[7]} clickHandler={this.clickHandler} />
+                            <Tab id="8" name={this.props.navigationComponent[8]} active={this.state.activeArray[8]} clickHandler={this.clickHandler} />
                         </div>
                     </div>
                 </nav>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import '../../node_modules/react-grid-layout/css/styles.css';
+import '../../node_modules/react-resizable/css/styles.css';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import Navbar from '../component/Navbar/Navbar';
@@ -11,12 +13,13 @@ import ControlledInput from '../component/ControlledInput/ControlledInput';
 import Redux from '../component/Redux/Redux';
 import TriviaGame from '../component/TriviaGame/TriviaGame';
 import Axios from '../component/Axios/index';
+import ReactGrid from '../component/ReactGrid/index';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      navigationComponent: ['', 'ContentUpdate', 'ApiFetch', 'CarListing', 'ControlledInput', 'Redux', 'TriviaGame', 'Axios']
+      navigationComponent: ['', 'ContentUpdate', 'ApiFetch', 'CarListing', 'ControlledInput', 'Redux', 'TriviaGame', 'Axios', 'ReactGrid']
     };
   }
 
@@ -33,6 +36,7 @@ class App extends Component {
           <Route exact path={'/' + this.state.navigationComponent[5]} component={Redux} />
           <Route exact path={'/' + this.state.navigationComponent[6]} component={TriviaGame} />
           <Route exact path={'/' + this.state.navigationComponent[7]} component={Axios} />
+          <Route exact path={'/' + this.state.navigationComponent[8]} component={ReactGrid} />
           <br />
         </div>
       </Router>

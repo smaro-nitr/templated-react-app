@@ -16,3 +16,11 @@ code {
 .bg-grey {
   background: grey;
 }
+
+.cancel-drag {
+  width: 150px;
+  height: 50px;
+  padding: 15px;
+  margin: 15px;
+  background: #FFF;
+}

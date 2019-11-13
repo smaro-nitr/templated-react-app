@@ -17,6 +17,10 @@ code {
   background: grey;
 }
 
+.bg-light-grey {
+  background: #ccc;
+}
+
 .cancel-drag {
   width: 150px;
   height: 50px;

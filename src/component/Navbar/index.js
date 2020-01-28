@@ -37,7 +37,7 @@ class Navbar extends Component {
 						<div className="navbar-nav">
 							{
 								this.props.navigationComponent.map((item, index) => {
-									return <Tab key={index} id={index} name={item} active={this.state.activeArray[index]} clickHandler={this.clickHandler} />
+									return <Tab key={index} id={index} name={item.path} active={this.state.activeArray[index]} clickHandler={this.clickHandler} />
 								})
 							}
 						</div>

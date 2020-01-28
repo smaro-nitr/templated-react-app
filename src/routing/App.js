@@ -15,12 +15,25 @@ import TriviaGame from '../component/TriviaGame/TriviaGame';
 import Axios from '../component/Axios/index';
 import ReactGrid from '../component/ReactGrid/index';
 import RxJs from '../component/RxJs/index';
+import Highchart from '../component/Highchart';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      navigationComponent: ['', 'ContentUpdate', 'ApiFetch', 'CarListing', 'ControlledInput', 'Redux', 'TriviaGame', 'Axios', 'ReactGrid', 'RxJs']
+      navigationComponent: [
+        { path: '', component: <Welcome name="Subhendu" /> },
+        { path: 'ContentUpdate', component: <ContentUpdate /> },
+        { path: 'ApiFetch', component: <ApiFetch starshipId="9" /> },
+        { path: 'CarListing', component: <CarListing /> },
+        { path: 'ControlledInput', component: <ControlledInput /> },
+        { path: 'Redux', component: <Redux /> },
+        { path: 'TriviaGame', component: <TriviaGame /> },
+        { path: 'Axios', component: <Axios /> },
+        { path: 'ReactGrid', component: <ReactGrid /> },
+        { path: 'RxJs', component: <RxJs /> },
+        { path: 'Highchart', component: <Highchart /> },
+      ]
     };
   }
 
@@ -28,17 +41,10 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar navigationComponent={this.state.navigationComponent}/> <br />
-          <Route exact path={'/' + this.state.navigationComponent[0]} render={() => <Welcome name="Subhendu" />} />
-          <Route exact path={'/' + this.state.navigationComponent[1]} component={ContentUpdate} />
-          <Route exact path={'/' + this.state.navigationComponent[2]} render={() => <ApiFetch starshipId="9" />} />
-          <Route exact path={'/' + this.state.navigationComponent[3]} component={CarListing} />
-          <Route exact path={'/' + this.state.navigationComponent[4]} component={ControlledInput} />
-          <Route exact path={'/' + this.state.navigationComponent[5]} component={Redux} />
-          <Route exact path={'/' + this.state.navigationComponent[6]} component={TriviaGame} />
-          <Route exact path={'/' + this.state.navigationComponent[7]} component={Axios} />
-          <Route exact path={'/' + this.state.navigationComponent[8]} component={ReactGrid} />
-          <Route exact path={'/' + this.state.navigationComponent[9]} component={RxJs} />
+          <Navbar navigationComponent={this.state.navigationComponent} /> <br />
+          {this.state.navigationComponent.map(item => {
+            return <Route exact path={'/' + item.path} render={() => item.component} />
+          })}
           <br />
         </div>
       </Router>
